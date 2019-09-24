@@ -21,7 +21,8 @@ pipeline
 		{	
 			steps
 			{
-				echo "third hello"
+				sh 'make check || true' 
+                junit '**/target/*.xml' 
 			}
 		}
 	}
