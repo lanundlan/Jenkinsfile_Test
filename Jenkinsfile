@@ -5,15 +5,24 @@ pipeline
 	{
 		stage('first stage')
 		{	
-			echo "first hello"
+			steps
+			{
+				echo "first hello"
+			}
 		}
 		stage('second stage')
 		{	
-			echo "second hello"
+			steps
+			{
+				echo "second hello"
+			}
 		}
 		stage('third stage')
 		{	
-			echo "third hello"
+			steps
+			{
+				echo "third hello"
+			}
 		}
 	}
 }
