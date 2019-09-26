@@ -21,9 +21,17 @@ pipeline
 		{	
 			steps
 			{
-				sh 'make check || true' 
+				bat 'make check || true' 
                 junit '**/target/*.xml' 
 			}
 		}
+		stage('Build') 
+		{
+            steps {
+                bat 'make' 
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+            }
+        }
+
 	}
 }
