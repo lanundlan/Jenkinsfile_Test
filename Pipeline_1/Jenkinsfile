@@ -17,14 +17,6 @@ pipeline
 				echo "second hello"
 			}
 		}
-		stage('third stage')
-		{	
-			steps
-			{
-				bat 'make check || true' 
-                junit '**/target/*.xml' 
-			}
-		}
 		stage('Build') 
 		{
             steps {
@@ -32,6 +24,5 @@ pipeline
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
             }
         }
-
 	}
 }
